@@ -1,0 +1,19 @@
+server:
+  context-path: /product
+  port: 8080
+  
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  datasource:
+    name: test
+    url: jdbc:mysql://192.168.16.137:3306/test?useUnicode=true&characterEncoding=utf-8
+    username: test
+    password: test
+    driver-class-name: com.mysql.jdbc.Driver
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+task:
+  job:
+    enabled: false
