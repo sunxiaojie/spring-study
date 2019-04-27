@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-	
+<configuration scan="true" debug="true">
+
+    <!--<property name="max_file_size" value="30MB" />
+    <springProperty name="log.dir" source="logging.dir"></springProperty>
+    <property name="filename_pattern_default" value="${log.dir}/default_%d{yyyyMMdd}_%i.log" />
+    <property name="filename_pattern_error" value="${log.dir}/error_%d{yyyyMMdd}_%i.log" />
+    <property name="filename_pattern_rpc" value="${log.dir}/rpc_%d{yyyyMMdd}_%i.log" />
+    <property name="filename_pattern_event" value="${log.dir}/event_%d{yyyyMMdd}_%i.log" />-->
+    <!--<property name="log_pattern" value="[%-5level] %d{MM-dd HH:mm:ss.SSS} [%traceId] [%thread] %logger{36}.%M\(%line\) - %msg%n" />-->
+
+
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%-5level] %d{MM-dd HH:mm:ss.SSS} [%thread] %logger{36}.%M\(%line\) - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <!--<appender name="default" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <encoder>
+            <pattern>[%-5level] %d{MM-dd HH:mm:ss.SSS} [%thread] %logger{36}.%M\(%line\) - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${filename_pattern_default}</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${max_file_size}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>-->
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+    </root>
+
 </configuration>
