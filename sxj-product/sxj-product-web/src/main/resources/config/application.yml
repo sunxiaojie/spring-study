@@ -1,7 +1,12 @@
+debug: false
+
 server:
-  context-path: /product
+  servlet:
+    context-path: /product
   port: 8080
-  
+  error:
+    path: error/error.html
+
 spring:
   thymeleaf:
     prefix: classpath:/templates/

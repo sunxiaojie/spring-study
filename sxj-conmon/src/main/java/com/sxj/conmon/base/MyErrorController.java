@@ -17,7 +17,7 @@ public class MyErrorController implements ErrorController {
 	
 	@RequestMapping("error")
 	public ModelAndView error(Map<String, Object> model) {
-		return new ModelAndView("error/404", model);
+		return new ModelAndView("error/error.html", model);
 	}
 
 	/* (non-Javadoc)
