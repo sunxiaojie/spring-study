@@ -1,10 +1,13 @@
 package com.sxj.conmon.config;
 
+import java.util.Arrays;
 import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import com.github.pagehelper.PageInterceptor;
 import org.apache.ibatis.plugin.Interceptor;
+import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -17,11 +20,11 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
 import com.github.pagehelper.PageHelper;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
 /**
  * @author SXJ
@@ -32,28 +35,25 @@ import lombok.extern.slf4j.Slf4j;
 @EnableTransactionManagement
 @Slf4j
 public class MyBatisConfig implements TransactionManagementConfigurer {
-	
-	@Autowired
+
+    @Autowired
     DataSource dataSource;
 
     @Bean(name = "sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactoryBean() {
-    	log.info("MyBatisConfig start..");
+        log.info("MyBatisConfig start..");
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-
-        //分页插件
-        PageHelper pageHelper = new PageHelper();
+        PageInterceptor pageInterceptor = new PageInterceptor();
         Properties properties = new Properties();
+        properties.setProperty("helperDialect", "mysql");
         properties.setProperty("reasonable", "true");
         properties.setProperty("supportMethodsArguments", "true");
         properties.setProperty("returnPageInfo", "check");
         properties.setProperty("params", "count=countSql");
-        pageHelper.setProperties(properties);
-
+        pageInterceptor.setProperties(properties);
         //添加插件
-        bean.setPlugins(new Interceptor[]{pageHelper});
-
+        bean.setPlugins(new Interceptor[]{pageInterceptor});
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {
