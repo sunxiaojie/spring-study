@@ -1,12 +1,12 @@
 
 package com.sxj.conmon.base;
 
-import java.util.Map;
-
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Map;
 
 /**
  * @author SXJ
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MyErrorController implements ErrorController {
 	
-	@RequestMapping("error")
+	@GetMapping("error")
 	public ModelAndView error(Map<String, Object> model) {
 		return new ModelAndView("error/error.html", model);
 	}

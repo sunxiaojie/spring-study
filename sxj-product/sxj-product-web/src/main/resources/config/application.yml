@@ -8,9 +8,12 @@ server:
     path: error/error.html
 
 spring:
+  # html模板
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
+
+  # 数据源
   datasource:
     name: test
     url: jdbc:mysql://192.168.16.137:3306/test?useUnicode=true&characterEncoding=utf-8
@@ -19,6 +22,13 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
+
+
+# 定时任务
 task:
   job:
     enabled: false
+
+# swagger
+swagger:
+  enabled: true
