@@ -9,8 +9,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * 启动器
  *
  */
-@SpringBootApplication(scanBasePackages = "com.sxj.product")
-@ServletComponentScan
+@SpringBootApplication
+//@ServletComponentScan
 public class ProductApp {
 	
 	public static void main(String[] args) throws Exception {

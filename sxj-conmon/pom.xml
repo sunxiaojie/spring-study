@@ -76,16 +76,16 @@
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>
         </dependency>
-        <dependency>
-            <groupId>net.sf.dozer</groupId>
-            <artifactId>dozer</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>net.sf.dozer</groupId>-->
+<!--            <artifactId>dozer</artifactId>-->
+<!--        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/net.sf.dozer/dozer-spring -->
-        <dependency>
-            <groupId>net.sf.dozer</groupId>
-            <artifactId>dozer-spring</artifactId>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/net.sf.dozer/dozer-spring &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>net.sf.dozer</groupId>-->
+<!--            <artifactId>dozer-spring</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.github.pagehelper</groupId>
@@ -103,10 +103,10 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.belerweb</groupId>
-            <artifactId>pinyin4j</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.belerweb</groupId>-->
+<!--            <artifactId>pinyin4j</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>

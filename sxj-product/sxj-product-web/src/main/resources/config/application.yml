@@ -3,7 +3,7 @@ debug: false
 server:
   servlet:
     context-path: /product
-  port: 8080
+  port: 7001
   error:
     path: error/error.html
 
@@ -16,19 +16,37 @@ spring:
   # 数据源
   datasource:
     name: test
-    url: jdbc:mysql://192.168.16.137:3306/test?useUnicode=true&characterEncoding=utf-8
-    username: test
-    password: test
+    url: jdbc:mysql://centos:3306/mydb?useUnicode=true&characterEncoding=utf-8
+    username: mysql
+    password: mysql
     driver-class-name: com.mysql.jdbc.Driver
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
 
-
-# 定时任务
-task:
-  job:
-    enabled: false
-
 # swagger
 swagger:
   enabled: true
+
+# xxl-job 定时器
+xxl:
+  job:
+    # xxl-job 开关
+    enable: true
+
+    admin:
+      # xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
+      addresses: http://127.0.0.1:7501/xxl-job-admin
+
+    # xxl-job executor address
+    executor:
+#      appname: product-executor
+      appname: xxl-job-executor-sample
+      ip:
+      port: 9001
+      # xxl-job log path
+      logpath: ${user.home}/logs/xxl-job/jobhandler
+      # xxl-job log retention days
+      logretentiondays: 2
+
+    # xxl-job, access token
+    accessToken:
