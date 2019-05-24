@@ -144,6 +144,8 @@
     <modules>
         <module>sxj-conmon</module>
         <module>sxj-product</module>
+        <module>sxj-netty</module>
+        <module>sxj-netty</module>
     </modules>
 
     <build>
