@@ -16,9 +16,16 @@ spring:
   # 数据源
   datasource:
     name: test
-    url: jdbc:mysql://centos:3306/mydb?useUnicode=true&characterEncoding=utf-8
-    username: mysql
-    password: mysql
+    # 个人数据库
+#    url: jdbc:mysql://centos:3306/mydb?useUnicode=true&characterEncoding=utf-8
+#    username: mysql
+#    password: mysql
+
+    # 公司数据库
+    url: jdbc:mysql://172.16.31.61:3306/beta-ppy-op?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&&useSSL=true
+    username: root
+    password: root
+
     driver-class-name: com.mysql.jdbc.Driver
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
@@ -31,7 +38,7 @@ swagger:
 xxl:
   job:
     # xxl-job 开关
-    enable: true
+    enable: false
 
     admin:
       # xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
@@ -50,3 +57,5 @@ xxl:
 
     # xxl-job, access token
     accessToken:
+mybatis:
+  mapper-locations: com/sxj/product/mapper/*.xml

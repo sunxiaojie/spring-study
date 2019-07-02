@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 //@ComponentScan(basePackages = {"com.sxj"})
 //@Import(value={DozerConfig.class})
 //@ServletComponentScan
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 public class SysApplication {
 
 //	@Bean(name = "dozerBeanMapperFactory")

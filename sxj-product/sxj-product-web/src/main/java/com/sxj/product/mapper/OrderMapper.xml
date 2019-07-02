@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxj.product.mapper.OrderMapper" >
+
+    <select id="countOrderList" resultType="java.lang.Integer">
+        select count(1) from ppy_order
+    </select>
+
+    <select id="queryOrderList" resultType="com.sxj.product.domain.OrderInfoDO">
+        select
+            ORDER_NO p1,
+            CUSTOMER_ID p2,
+            SHOP_NAME p3,
+            CITY_CODE p4
+        from ppy_order limit #{start},#{end}
+    </select>
+
+</mapper>

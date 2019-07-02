@@ -19,7 +19,7 @@
         <dependencies></dependencies>
     </dependencyManagement>
     <build>
-        <finalName>sxj-product</finalName>
+        <finalName>sxj-product-api</finalName>
     </build>
 
 </project>

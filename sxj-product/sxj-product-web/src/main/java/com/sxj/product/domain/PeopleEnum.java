@@ -3,17 +3,14 @@
  */
 package com.sxj.product.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 /**
  * @author SXJ
  * @Date 2017年12月30日
  */
-@AllArgsConstructor
 @Getter
-public enum PeopleEmun {
+public enum PeopleEnum {
 	
 	ADULT(1, "name", "shanghai");
 	
@@ -22,5 +19,10 @@ public enum PeopleEmun {
 	private String name;
 	
 	private String address;
-	
+
+	PeopleEnum(Integer age, String name, String address) {
+		this.age = age;
+		this.name = name;
+		this.address = address;
+	}
 }
