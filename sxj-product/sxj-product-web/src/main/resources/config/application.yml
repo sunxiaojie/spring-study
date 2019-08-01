@@ -3,7 +3,7 @@ debug: false
 server:
   servlet:
     context-path: /product
-  port: 7001
+  port: 8080
   error:
     path: error/error.html
 
