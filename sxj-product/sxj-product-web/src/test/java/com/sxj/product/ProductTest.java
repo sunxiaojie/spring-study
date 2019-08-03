@@ -34,8 +34,8 @@ public class ProductTest {
 
         OutputStream out = new FileOutputStream("/Users/sunxiaojie/Downloads/aaa.xlsx");
         ExcelWriter excelWriter = new ExcelWriter(out, ExcelTypeEnum.XLSX);
-        int page = 5000;
-        orderSize = 50000;
+        int page = 20000;
+//        orderSize = 50000;
         int num = orderSize / page;
         Integer start;
         for (int i = 1; i <= num; i++) {
