@@ -33,16 +33,16 @@ public class TreeUtil {
     * @author Sxj
     * @date 2019/9/12
     */
-    static <T> T createTree(Object id, List<T> treeList, Function<T, Object> getId, Function<T, Object> getParentId, BiConsumer<T, List<T>> setChildList) {
+    static <T, K> T createTree(K id, List<T> treeList, Function<T, K> getId, Function<T, K> getParentId, BiConsumer<T, List<T>> setChildList) {
         if (CollectionUtils.isEmpty(treeList)) {
             return null;
         }
-        Map<Object, T> treeMap = treeList.stream().collect(Collectors.toMap(getId, Function.identity()));
+        Map<K, T> treeMap = treeList.stream().collect(Collectors.toMap(getId, Function.identity()));
         T tree = treeMap.get(id);
         if (null == tree) {
             return null;
         }
-        Map<Object, List<T>> treeParentMap = treeList.stream().collect(Collectors.groupingBy(getParentId));
+        Map<K, List<T>> treeParentMap = treeList.stream().collect(Collectors.groupingBy(getParentId));
         List<T> trees = treeParentMap.get(id);
         if (CollectionUtils.isEmpty(trees)) {
             return tree;
@@ -50,7 +50,7 @@ public class TreeUtil {
         setChildList.accept(tree, trees);
         List<T> childTreeList = new ArrayList<>();
         for (T t : trees) {
-            Object objectId = getId.apply(t);
+            K objectId = getId.apply(t);
             if (null == objectId) {
                 continue;
             }
