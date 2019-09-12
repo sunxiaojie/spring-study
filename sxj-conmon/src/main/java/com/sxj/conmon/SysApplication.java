@@ -1,30 +1,17 @@
 package com.sxj.conmon;
 
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 
+/**
+* 框架包导入
+* @author Sxj
+* @date 2019/9/12
+*/
 @Configuration
 @ComponentScan(basePackages = {"com.sxj.conmon"})
 @ServletComponentScan(basePackages = {"com.sxj.conmon"})
-//@SpringBootApplication
-//@ComponentScan(basePackages = {"com.sxj"})
-//@Import(value={DozerConfig.class})
-//@ServletComponentScan
-//@EnableAutoConfiguration
-public class SysApplication {
-
-//	@Bean(name = "dozerBeanMapperFactory")
-//	public DozerBeanMapperFactoryBean createDozerFactory() throws Exception {
-//		DozerBeanMapperFactoryBean factory = new DozerBeanMapperFactoryBean();
-//		ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-//		Resource[] appMappingConfig = resolver.getResources("classpath:dozer/**/**/*Mapping.xml");
-//		factory.setMappingFiles(appMappingConfig);
-//		return factory;
-//	}
-
-
-}
+public class SysApplication {}
