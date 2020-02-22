@@ -1,13 +1,9 @@
 package com.sxj.product.dto;
 
-import java.io.Serializable;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @author SXJ
@@ -17,6 +13,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class People implements Serializable{
 
 	private static final long serialVersionUID = -6757480416300658912L;

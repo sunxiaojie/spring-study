@@ -14,8 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>sxj-netty-client</module>
-        <module>sxj-netty-server</module>
+        <module>sxj-netty</module>
     </modules>
 
     <dependencyManagement>
